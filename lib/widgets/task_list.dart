@@ -13,11 +13,16 @@ class _TasksListState extends State<TasksList> {
   @override
   Widget build(BuildContext context) {
     List<Task> tasks = Provider.of<TaskData>(context, listen: false).alltasks;
-    return ListView.builder(
-      itemCount: tasks.length,
-      itemBuilder: (context, index) {
-        return TaskTile(tasks[index]);
-      },
-    );
+    return tasks.isEmpty
+        ? Center(
+            child: Text('Add Tasks first.'),
+          )
+        : ListView.separated(
+            separatorBuilder: (context, index) => Divider(),
+            itemCount: tasks.length,
+            itemBuilder: (context, index) {
+              return TaskTile(tasks[index]);
+            },
+          );
   }
 }

@@ -2,11 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:todoey/model/task.dart';
 
 class TaskData extends ChangeNotifier {
-  List<Task> _tasks = [
-    Task(name: 'Buy milk'),
-    Task(name: 'Buy eggs'),
-    Task(name: 'Buy bread'),
-  ];
+  List<Task> _tasks = [];
 
   void addTask(Task task) {
     _tasks.add(task);
