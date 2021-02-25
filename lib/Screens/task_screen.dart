@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/model/task_data.dart';
 import 'package:todoey/widgets/task_list.dart';
 import 'add_task_screen.dart';
+import 'package:provider/provider.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -55,7 +57,7 @@ class TasksScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "10 things",
+                    "${Provider.of<TaskData>(context).alltasks.length} tasks",
                     style: TextStyle(
                       color: Colors.white70,
                     ),
